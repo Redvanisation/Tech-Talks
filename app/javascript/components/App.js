@@ -5,7 +5,7 @@ class App extends React.Component {
     console.log(this.props)
     return (
       <React.Fragment>
-        {/* {this.props.greeting} */}
+        something{/* {this.props.greeting} */}
       </React.Fragment>
     );
   }
