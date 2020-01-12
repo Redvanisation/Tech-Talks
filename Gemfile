@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 gem 'react-rails'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'devise'
 
 
 group :development, :test do
