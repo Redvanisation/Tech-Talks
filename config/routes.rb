@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     namespace :v1 do 
       resources :talks
       resources :the_users
+      resources :fav_talks
     end 
   end
   

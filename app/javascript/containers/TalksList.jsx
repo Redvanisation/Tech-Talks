@@ -1,4 +1,5 @@
 /* eslint-disable react/no-array-index-key */
+/* eslint-disable no-shadow */
 /* eslint-disable arrow-parens */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';

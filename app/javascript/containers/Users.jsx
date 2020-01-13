@@ -1,39 +1,46 @@
+/* eslint-disable no-shadow */
+/* eslint-disable arrow-parens */
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { getUser } from '../actions/index';
 
 class Users extends Component {
-  constructor() {
-    super();
-    this.state = {
-      users: null,
-      current_user: null,
-    };
-  }
-
   componentDidMount() {
-    fetch('api/v1/the_users')
+    const { getUser } = this.props;
+    fetch('api/v1/the_users#fav_talks')
       .then(res => res.json())
-      .then(data => {
-        this.setState({
-          users: data[0],
-          current_user: data[1],
-        });
-      });
+      .then(data => getUser(data));
   }
 
   render() {
-
-    const users = this.state.users ? this.state.users.map(user => {
-      return (<div key={user.id}>
-        <p>{user.email}</p>
-      </div>);
-    }) : <p>No users yet...</p>
+    const { currentUser } = this.props;
     return (
       <div>
-        {users}
-        { this.state.current_user ? <h3>current user: {this.state.current_user.email}</h3> : 'boo'}
+        { currentUser ? (
+          <h3>
+            current user:
+            {' '}
+            {currentUser.email}
+          </h3>
+        ) : 'No current user yet'}
+        {/* {console.log(this.props)} */}
       </div>
     );
   }
 }
 
-export default Users;
+const mapStateToProps = state => ({
+  currentUser: state.currentUser,
+});
+
+const mapDispatchToProps = dispatch => ({
+  getUser: user => dispatch(getUser(user)),
+});
+
+Users.propTypes = {
+  getUser: PropTypes.instanceOf(Function).isRequired,
+  currentUser: PropTypes.instanceOf(Object).isRequired,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Users);

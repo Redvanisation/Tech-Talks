@@ -11,7 +11,8 @@ import Display from "../components/Display";
 
 const initialState = {
   talks: [{}],
-  current_user: {}
+  currentUser: {},
+  favTalks: [{}],
 }
 
 const boo = {

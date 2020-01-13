@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import talksReducer from './talksReducer';
 import userReducer from './userReducer';
+import favTalksReducer from './favTalksReducer';
 
 const rootReducer = combineReducers({
   talks: talksReducer,
-  current_user: userReducer,
+  currentUser: userReducer,
+  favTalks: favTalksReducer,
 });
 
 export default rootReducer;

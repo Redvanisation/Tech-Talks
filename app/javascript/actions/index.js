@@ -13,9 +13,9 @@ const getUser = user => ({
   payload: user,
 });
 
-const favTalk = filter => ({
+const favTalks = filter => ({
   type: FAV_TALK,
   payload: filter,
 });
 
-export { getTalks, getUser, favTalk };
+export { getTalks, getUser, favTalks };

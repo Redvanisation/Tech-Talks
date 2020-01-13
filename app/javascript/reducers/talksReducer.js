@@ -3,9 +3,6 @@ const talksReducer = (state = null, action) => {
     case 'GET_TALKS':
       return action.payload;
 
-    case 'FAV_TALK':
-      return action.payload;
-
     default:
       return state;
   }
