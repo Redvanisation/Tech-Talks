@@ -1,11 +1,11 @@
 module Api 
   module V1
-    class TalksController < ApplicationController
+    class TheUsersController < ApplicationController
       def index
-        @talks = Talk.all
+        @users_list = User.all
         
         if user_signed_in?
-          render json: @talks
+          render json: [@users_list, current_user]
         else
           render json: {}, status: 401
         end
