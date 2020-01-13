@@ -15,36 +15,6 @@ const initialState = {
 }
 
 const boo = {
-  talks: [
-    {
-      id: 1,
-      title: 'ReactJS',
-      description: 'Some talk about react! bla bla bla bla bla',
-      speakers: [
-        'John Doe'
-      ],
-      location: 'New York City, NY'
-    },
-    {
-      id: 2,
-      title: 'Ruby on Rails',
-      description: 'Some talk about Rails! Rails Rails Rails Rails Rails Rails',
-      speakers: [
-        'Michael Hartl'
-      ],
-      location: 'Texas, TX'
-    },
-    {
-      id: 3,
-      title: 'JavaScript',
-      description: 'Some talk about JavaScript! JavaScript ES6 ES5 ES7 ES8 Frameworks...',
-      speakers: [
-        'JS Dude',
-        'James Bond'
-      ],
-      location: 'Los Angeles, CA'
-    },
-  ],
   current_user: {
     id: 1,
     email: 'example@email.com',

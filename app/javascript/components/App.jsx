@@ -2,8 +2,6 @@
 import React, { Component } from 'react';
 // import { Route, Switch } from 'react-router-dom';
 // import { BrowserRoute, Route, Switch } from 'react-router-dom';
-// import Home from './Home';
-// import Demo from './Demo';
 import TalksList from '../containers/TalksList';
 import Users from '../containers/Users';
 
