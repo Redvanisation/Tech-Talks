@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getTalks, favTalks } from '../actions/index';
 import Talk from '../components/Talk';
+import FavsButton from '../components/buttons/FavsButton';
 
 class TalksList extends Component {
   componentDidMount() {
@@ -38,6 +39,7 @@ class TalksList extends Component {
     return (
       <div>
         {allTalks}
+        <FavsButton />
       </div>
     );
   }

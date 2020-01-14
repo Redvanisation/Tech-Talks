@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  root 'welcome#app'
+  root 'welcome#index'
   
   devise_for :users
   
   get 'welcome/home'
-  get 'app', to: 'welcome#app', as: 'app'
+  get 'index', to: 'welcome#index', as: 'index'
 
   namespace :api do 
     namespace :v1 do 
