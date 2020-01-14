@@ -8,7 +8,7 @@ import { getUser } from '../actions/index';
 class Users extends Component {
   componentDidMount() {
     const { getUser } = this.props;
-    fetch('api/v1/the_users#fav_talks')
+    fetch('api/v1/the_users')
       .then(res => res.json())
       .then(data => getUser(data));
   }

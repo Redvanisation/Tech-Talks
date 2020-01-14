@@ -15,6 +15,13 @@ class FavTalks extends Component {
       .then(data => favTalks(data));
   }
 
+  // componentDidUpdate() {
+  //       const { favTalks } = this.props;
+  //   fetch('api/v1/fav_talks')
+  //     .then(res => res.json())
+  //     .then(data => favTalks(data));
+  // }
+
   render() {
     const { userTalks } = this.props;
     const favs = userTalks

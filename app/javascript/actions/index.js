@@ -2,6 +2,7 @@
 const GET_TALKS = 'GET_TALKS';
 const GET_USER = 'GET_USER';
 const FAV_TALK = 'FAV_TALK';
+const ADD_FAV = 'ADD_FAV';
 
 const getTalks = talks => ({
   type: GET_TALKS,
@@ -18,4 +19,11 @@ const favTalks = filter => ({
   payload: filter,
 });
 
-export { getTalks, getUser, favTalks };
+const addFav = fav => ({
+  type: ADD_FAV,
+  payload: fav,
+});
+
+export {
+  getTalks, getUser, favTalks, addFav,
+};

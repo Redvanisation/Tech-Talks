@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable no-shadow */
 /* eslint-disable arrow-parens */
@@ -15,10 +16,24 @@ class TalksList extends Component {
       .then(data => getTalks(data));
   }
 
+  handleFav(id) {
+    fetch(`api/v1/fav_talks/${id}`, {
+      method: 'put',
+      body: id,
+    });
+  }
+
+  // handleUnFav(id) {
+  //   fetch(`api/v1/fav_talks/${id}`, {
+  //     method: 'put',
+  //     body: id,
+  //   });
+  // }
+
   render() {
     const { talks } = this.props;
     const allTalks = (talks)
-      ? talks.map((talk, i) => <Talk key={i} talk={talk} />)
+      ? talks.map((talk, i) => <Talk key={i} talk={talk} handleFav={this.handleFav} />)
       : <p>Talks loading</p>;
     return (
       <div>

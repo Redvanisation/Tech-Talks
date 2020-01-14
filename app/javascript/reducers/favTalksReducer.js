@@ -3,6 +3,9 @@ const favTalksReducer = (state = null, action) => {
     case 'FAV_TALK':
       return action.payload;
 
+    case 'ADD_FAV':
+      return action.payload;
+
     default:
       return state;
   }

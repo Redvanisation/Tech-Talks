@@ -4,6 +4,6 @@ class CreateTalksUsers < ActiveRecord::Migration[6.0]
       t.integer "user_id"
       t.integer "talk_id"
     end
-    add_index("talks_users", ["user_id", "talk_id"])
+    add_index("talks_users", ["user_id", "talk_id"], unique: true)
   end
 end
