@@ -34,7 +34,13 @@ class TalksList extends Component {
   render() {
     const { talks } = this.props;
     const allTalks = (talks)
-      ? talks.map((talk, i) => <Talk key={i} talk={talk} handleFav={this.handleFav} />)
+      ? talks.map((talk, i) => (
+        <Talk
+          key={i}
+          talk={talk}
+          talks={talks}
+        />
+      ))
       : <p>Talks loading</p>;
     return (
       <div>

@@ -18,13 +18,12 @@ class Users extends Component {
     return (
       <div>
         { currentUser ? (
-          <h3>
-            current user:
+          <h5>
+            Logged in as:
             {' '}
             {currentUser.email}
-          </h3>
+          </h5>
         ) : 'No current user yet'}
-        {/* {console.log(this.props)} */}
       </div>
     );
   }

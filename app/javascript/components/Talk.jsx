@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 class Talk extends React.Component {
   handleClick(id) {
-    fetch(`api/v1/fav_talks/${id}`, {
-      method: 'put',
-      body: id,
-    });
+    // fetch(`api/v1/fav_talks/${id}`, {
+    //   method: 'put',
+    //   body: id,
+    // });
     const { handleFav } = this.props;
     handleFav(id);
   }
@@ -15,13 +16,15 @@ class Talk extends React.Component {
     const { talk, handleFav } = this.props;
     return (
       <div>
-        <h3>{talk.title}</h3>
+        <Link to={`/${talk.id}`}>
+          <h3>{talk.title}</h3>
+        </Link>
         <p>{talk.description}</p>
         <p>{talk.speakers}</p>
         <p>{talk.location}</p>
-        {handleFav
+        {/* {handleFav
           ? <button type="button" onClick={() => this.handleClick(talk.id)}>Add as fav</button>
-          : ''}
+          : ''} */}
       </div>
     );
   }

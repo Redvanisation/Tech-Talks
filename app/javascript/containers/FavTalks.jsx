@@ -8,19 +8,22 @@ import { favTalks } from '../actions/index';
 import Talk from '../components/Talk';
 
 class FavTalks extends Component {
+  // constructor(props) {
+  //   super(props);
+  // }
+
   componentDidMount() {
-    const { favTalks } = this.props;
-    fetch('api/v1/fav_talks')
-      .then(res => res.json())
-      .then(data => favTalks(data));
+    this.getData();
   }
 
-  // componentDidUpdate() {
-  //       const { favTalks } = this.props;
-  //   fetch('api/v1/fav_talks')
-  //     .then(res => res.json())
-  //     .then(data => favTalks(data));
-  // }
+  getData() {
+    const { favTalks } = this.props;
+    setTimeout(() => {
+      fetch('api/v1/fav_talks')
+        .then(res => res.json())
+        .then(data => favTalks(data));
+    }, 10);
+  }
 
   render() {
     const { userTalks } = this.props;
