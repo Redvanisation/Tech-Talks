@@ -36,7 +36,10 @@ class TalksList extends Component {
       ))
       : <p>Talks loading</p>;
     return (
-      <div className="app__talks-list container-fluid">
+      <div className="app__talks-list">
+        <header className="talks__header pb-4">
+          <h2 className="talks__header--title font-weight-bold ml-5">Talks List</h2>
+        </header>
         {allTalks}
         <FavsButton />
       </div>

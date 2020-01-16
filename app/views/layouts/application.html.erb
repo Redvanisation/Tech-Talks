@@ -10,18 +10,19 @@
   </head>
 
   <body>
-    <header class="header">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-
-      <nav style="text-align: left">
-        <% if user_signed_in? %>
-          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>           
-        <% else %>
-          <%= link_to('Login', new_user_session_path)  %> |
-          <%= link_to('Sign Up', new_user_registration_path)  %>  
-        <% end %>
+    <% if user_signed_in? %>
+    <header class="header pt-2 pb-2 pl-5 pr-5">      
+      <nav class="nav">
+            <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav__link") %> 
       </nav>
+    <% end %>
+      
+
+      <% if notice %> 
+        <p class="notice"><%= notice %></p>
+      <% elsif %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
     </header>
     <%= yield %>
   </body>

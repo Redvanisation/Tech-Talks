@@ -9,7 +9,6 @@ import TalksList from '../containers/TalksList';
 import Users from '../containers/Users';
 import SingleTalk from './SingleTalk';
 import FavTalks from '../containers/FavTalks';
-import BackButton from './buttons/BackButton';
 import { favTalks } from '../actions/index';
 
 class App extends Component {

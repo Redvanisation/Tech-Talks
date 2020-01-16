@@ -3,7 +3,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { FaRegClock, FaRegBuilding, FaPlus } from 'react-icons/fa';
+import {
+  FaRegClock, FaRegBuilding, FaPlus, FaUserTie,
+} from 'react-icons/fa';
 import BackButton from './buttons/BackButton';
 
 class SingleTalk extends Component {
@@ -51,7 +53,7 @@ class SingleTalk extends Component {
       <div>
         {talk ? (
           <div className="st">
-            <header className="st__header pb-2">
+            <header className="st__header pb-5">
               <div className="d-flex">
                 <BackButton />
                 <h2 className="st__title font-weight-bold">{talk.title}</h2>
@@ -62,14 +64,15 @@ class SingleTalk extends Component {
                   <div className="d-flex p-4 st__cont">
                     <div className="st__icon-cont mt-3"><FaRegClock className="st__icon-cont--icon" /></div>
                     <div className="st__date pt-3 pb-3 pr-4 pl-4">
-                      <p className="font-weight-bold">Date and time:</p>
-                      08:00AM - 12:00PM {talk.date}
+                      <p className="font-weight-bold">Date and time</p>
+                      08:00AM - 12:00PM
+                      {talk.date}
                     </div>
                   </div>
                   <div className="d-flex p-4">
                     <div className="st__icon-cont mt-3"><FaRegBuilding className="st__icon-cont--icon" /></div>
                     <div className="st__location pt-3 pb-3 pr-4 pl-4">
-                      <p className="font-weight-bold">Location:</p>
+                      <p className="font-weight-bold">Location</p>
                       {talk.location}
                     </div>
                   </div>
@@ -77,7 +80,7 @@ class SingleTalk extends Component {
                 {this.handleButton()
                   ? (
                     <button
-                      className="st__button pt-3 pb-3 pl-4 pr-4 mt-3 mb-5"
+                      className="st__button pt-3 pb-3 pl-4 pr-4 mt-3"
                       type="button"
                       onClick={() => this.handleAddFavorite(talk.id)}
                     >
@@ -89,8 +92,18 @@ class SingleTalk extends Component {
               </div>
             </header>
 
-            <p>{talk.description}</p>
-            <p>{talk.speakers}</p>
+            <div className="st__bottom st__body p-5">
+              <h3 className="font-weight-bold">Description</h3>
+              <p>{talk.description}</p>
+            </div>
+
+            <div className="st__bottom st__speaker mt-5">
+              <h3 className="font-weight-bold st__speaker--title mb-4 ml-5">Speaker</h3>
+              <div className="d-flex st__speaker--body-div p-5">
+                <FaUserTie className="st__speaker--body-icon mr-3" />
+                <p className="st__speaker--body-text">{talk.speakers}</p>
+              </div>
+            </div>
           </div>
         )
           : 'No talks yet'}

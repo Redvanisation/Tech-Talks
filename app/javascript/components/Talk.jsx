@@ -15,7 +15,7 @@ class Talk extends React.Component {
   }
 
   render() {
-    const { talk, handleFav } = this.props;
+    const { talk } = this.props;
     return (
       <div className="app__talk pt-4 pb-3 pl-5 pr-5 m-5">
         <Link to={`/${talk.id}`}>

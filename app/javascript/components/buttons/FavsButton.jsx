@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { MdStars } from 'react-icons/md';
+
 
 const FavsButton = () => (
   <Link to="/fav_talks" label="home">
-    <button type="button">
-        &rarr;
-    </button>
+    <div className="fav-button">
+      <MdStars className="fav-button__icon" />
+    </div>
   </Link>
 );
 

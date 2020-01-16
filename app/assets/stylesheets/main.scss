@@ -15,14 +15,30 @@ body {
 
 .header {
   background-color: $color-primary;
-  height: 12vh;
-  margin-top: -30px;
+  padding: .5rem;
+  // margin-top: -10px;
+  color: $color-white;
+}
+
+.nav {
+  position: relative;
+  float: right;
+  
+  &__link:link,
+  &__link:visited {
+    display: inline-block;
+    position: relative;
+    color: $color-white;
+    text-decoration: none;
+    margin-right: .5rem;
+    z-index: 99;
+  }
 }
 
 .app {
 
   &__talks-list {
-
+    margin-top: 0;
   }
 
   &__talk {
@@ -73,9 +89,19 @@ body {
       transition: all .2s;
 
       &:hover {
-        // right: 2.2%;
         transform: translate(-50%, -50%) scale(1.2);
       }
+    }
+  }
+}
+
+.talks {
+  &__header {
+    color: $color-white;
+    background-color: $color-primary;
+
+    &--title {
+
     }
   }
 }
@@ -139,6 +165,40 @@ body {
       float: right;
     }
   }
+
+  &__bottom {
+    width: 99%;
+    margin: 0 auto;
+  }
+
+  &__body {
+    background-color: $color-white;
+    color: $color-primary;
+  }
+
+  &__speaker {
+    color: $color-primary;
+
+    &--title {
+      color: $color-green;
+    }
+
+    &--body-div {
+      background-color: $color-white;
+      border-radius: 5px;
+    }
+
+    &--body-icon {
+      color: $color-gold;
+      font-size: 2rem;
+    }
+
+    &--body-text {
+      font-weight: 700;
+      text-transform: capitalize;
+      letter-spacing: .5px;
+    }
+  }
 }
 
 .button {
@@ -147,5 +207,109 @@ body {
   transition: transform .2s;
   &:hover {
     transform: scale(1.1);
+  }
+}
+
+.fav-button {
+  position: relative;
+  width: 100px;
+  height: 60px;
+  margin: 0 auto;
+  background-color: $color-white;
+  border-radius: 20px;
+  box-shadow: 0px 2px 6px .5px rgba($color-black, 0.1);
+  transition: transform .2s;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(-1px);
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $color-gold;
+    font-size: 3rem;
+  }
+}
+
+.form {
+  text-align: center;
+  color: $color-primary;
+
+  &__h1 {
+    margin: 2rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+  
+  &__field {
+    width: 90%;
+    margin: 0 auto;
+    
+    &--input {
+      width: 50%;
+      padding: 1rem;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 10px;
+      border: none;
+      color: $color-primary;
+      outline: none;
+      margin: 0 auto;
+      margin-bottom: 1rem;
+      box-shadow: 0px 2px 6px .5px rgba($color-black, 0.1);
+    }
+
+    &--remember {
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+  
+  &__actions {
+    width: 90%;
+    margin: 0 auto;
+
+    &--submit {
+      display: inline-block;
+      font-size: 20px;
+      font-weight: 700;
+      background-color: $color-green;
+      color: $color-white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 1rem 0;
+      width: 300px;
+      height: 50px;
+      transition: all .2s;
+
+      &:hover {
+        transform: translateY(-2px);
+        background-color: rgba($color-green, .9);
+      }
+
+      &:active {
+        transform: translateY(-1px);
+      }
+    }
+
+    &--link:link,
+    &--link:visited {
+      text-decoration: none;
+    }
   }
 }

@@ -15,21 +15,9 @@ class FavTalks extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.getData();
-  // }
-
-  // getData() {
-  //   const { favTalks } = this.props;
-  //   setTimeout(() => {
-  //     fetch('api/v1/fav_talks')
-  //       .then(res => res.json())
-  //       .then(data => favTalks(data));
-  //   }, 10);
-  // }
-
   handleChange() {
-    this.props.getData();
+    const { getData } = this.props;
+    getData();
   }
 
   render() {
@@ -39,8 +27,11 @@ class FavTalks extends Component {
       : 'No fav talks yet';
 
     return (
-      <div className='boo' onChange={this.handleChange()}>
-        <BackButton />
+      <div className="" onChange={this.handleChange()}>
+        <header className="d-flex talks__header pb-4">
+          <BackButton />
+          <h2 className="talks__header--title font-weight-bold ml-2">Favorite Talks</h2>
+        </header>
         {favs}
       </div>
     );
@@ -56,8 +47,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 FavTalks.propTypes = {
-  favTalks: PropTypes.instanceOf(Function).isRequired,
   userTalks: PropTypes.instanceOf(Object).isRequired,
+  getData: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FavTalks);
