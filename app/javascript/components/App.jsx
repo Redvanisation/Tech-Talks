@@ -34,7 +34,6 @@ class App extends Component {
       <div className="app">
         <Router>
           <div>
-            <BackButton />
             <Route exact path="/" component={TalksList} />
             <Switch>
               <Route path="/fav_talks" render={(props) => <FavTalks {...props} getData={this.getData} />} />

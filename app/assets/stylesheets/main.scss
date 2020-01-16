@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -25,10 +26,24 @@ body {
   }
 
   &__talk {
+    position: relative;
     background-color: $color-white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 6px .5px rgba($color-black, 0.1);
 
     &--title {
       display: inline-block;
+      color: $color-primary;
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+
+    &--subcontent-div {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      color: $color-purple-light;
+
     }
 
     &--speakers {
@@ -36,7 +51,101 @@ body {
     }
 
     &--location {
+      display: flex;
+      flex-direction: column;
+      align-items: center;   
 
+      
     }
+
+    &--icon {
+      font-size: 1.5rem;
+      margin-bottom: .5rem;
+    }
+
+    &--button {
+      position: absolute;
+      top: 50%;
+      right: 3%;
+      font-size: 2.5rem;
+      color: $color-green;
+      transform: translate(-50%, -50%);
+      transition: all .2s;
+
+      &:hover {
+        // right: 2.2%;
+        transform: translate(-50%, -50%) scale(1.2);
+      }
+    }
+  }
+}
+
+.st {
+  &__header {
+    color: $color-white;
+    background-color: $color-primary;
+  }
+
+  &__title {
+    letter-spacing: 2px;
+  }
+
+  &__contained {
+    border-radius: 5px;
+    background-color: $color-white;
+    color: $color-primary;
+  }
+
+  &__cont {
+    border-bottom: 1px solid rgba($color-black, 0.1);
+  }
+
+  &__date {
+  }
+
+  &__icon-cont {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    padding: .5rem;
+    border-radius: 100%;
+    background-color: $color-blue;
+    &--icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $color-white;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+  }
+
+  &__button {
+    background-color: $color-blue;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    color: $color-white;
+    text-align: left;
+    transition: background-color .2s;
+
+    &:hover {
+      background-color: rgba($color-blue, .8);
+    }
+    
+    &--icon {
+      float: right;
+    }
+  }
+}
+
+.button {
+  color: $color-white;
+  font-size: 1.5rem;
+  transition: transform .2s;
+  &:hover {
+    transform: scale(1.1);
   }
 }

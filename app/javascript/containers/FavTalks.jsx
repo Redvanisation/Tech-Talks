@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { favTalks } from '../actions/index';
+import BackButton from '../components/buttons/BackButton';
 import Talk from '../components/Talk';
 
 class FavTalks extends Component {
@@ -39,6 +40,7 @@ class FavTalks extends Component {
 
     return (
       <div className='boo' onChange={this.handleChange()}>
+        <BackButton />
         {favs}
       </div>
     );
