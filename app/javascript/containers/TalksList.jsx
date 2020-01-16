@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getTalks, favTalks } from '../actions/index';
 import Talk from '../components/Talk';
+import Users from './Users';
 import FavsButton from '../components/buttons/FavsButton';
 
 class TalksList extends Component {
@@ -37,6 +38,7 @@ class TalksList extends Component {
       : <p>Talks loading</p>;
     return (
       <div className="app__talks-list">
+        <Users />
         <header className="talks__header pb-4">
           <h2 className="talks__header--title font-weight-bold ml-5">Talks List</h2>
         </header>

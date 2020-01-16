@@ -27,8 +27,8 @@ class FavTalks extends Component {
       : 'No fav talks yet';
 
     return (
-      <div className="" onChange={this.handleChange()}>
-        <header className="d-flex talks__header pb-4">
+      <div onChange={this.handleChange()}>
+        <header className="d-flex talks__header pb-4 pt-2">
           <BackButton />
           <h2 className="talks__header--title font-weight-bold ml-2">Favorite Talks</h2>
         </header>

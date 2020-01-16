@@ -99,6 +99,7 @@ body {
   &__header {
     color: $color-white;
     background-color: $color-primary;
+    width: 100%;
 
     &--title {
 
@@ -212,7 +213,7 @@ body {
 
 .fav-button {
   position: relative;
-  width: 100px;
+  width: 10rem;
   height: 60px;
   margin: 0 auto;
   background-color: $color-white;
@@ -312,4 +313,27 @@ body {
       text-decoration: none;
     }
   }
+}
+
+.notice,
+.alert {
+  color: $color-gold;
+  padding: .5rem;
+  text-align: center;
+  font-weight: 700;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.current_user {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+h6 {
+  font-size: .8rem !important;
 }

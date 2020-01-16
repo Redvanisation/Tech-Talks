@@ -16,13 +16,13 @@ class Users extends Component {
   render() {
     const { currentUser } = this.props;
     return (
-      <div>
+      <div className="current_user pt-1 pb-1 pl-5">
         { currentUser ? (
-          <h5>
-            Logged in as:
+          <h6>
+            Current user:
             {' '}
             {currentUser.email}
-          </h5>
+          </h6>
         ) : 'No current user yet'}
       </div>
     );

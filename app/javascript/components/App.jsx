@@ -10,6 +10,7 @@ import Users from '../containers/Users';
 import SingleTalk from './SingleTalk';
 import FavTalks from '../containers/FavTalks';
 import { favTalks } from '../actions/index';
+import hide from '../helpers/helpers';
 
 class App extends Component {
   constructor() {
@@ -19,6 +20,7 @@ class App extends Component {
 
   componentDidMount() {
     this.getData();
+    hide();
   }
 
   getData() {
@@ -40,7 +42,6 @@ class App extends Component {
             </Switch>
           </div>
         </Router>
-        <Users />
       </div>
     );
   }

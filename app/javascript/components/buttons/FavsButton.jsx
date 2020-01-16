@@ -5,7 +5,7 @@ import { MdStars } from 'react-icons/md';
 
 const FavsButton = () => (
   <Link to="/fav_talks" label="home">
-    <div className="fav-button">
+    <div className="fav-button mb-5">
       <MdStars className="fav-button__icon" />
     </div>
   </Link>
