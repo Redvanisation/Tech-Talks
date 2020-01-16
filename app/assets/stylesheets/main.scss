@@ -1,0 +1,42 @@
+@import './variables';
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-secondary !important;
+}
+
+.header {
+  background-color: $color-primary;
+  height: 12vh;
+  margin-top: -30px;
+}
+
+.app {
+
+  &__talks-list {
+
+  }
+
+  &__talk {
+    background-color: $color-white;
+
+    &--title {
+      display: inline-block;
+    }
+
+    &--speakers {
+
+    }
+
+    &--location {
+
+    }
+  }
+}

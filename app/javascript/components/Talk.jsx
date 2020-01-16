@@ -15,16 +15,12 @@ class Talk extends React.Component {
   render() {
     const { talk, handleFav } = this.props;
     return (
-      <div>
+      <div className="app__talk pt-4 pb-3 pl-5 pr-5 m-5">
         <Link to={`/${talk.id}`}>
-          <h3>{talk.title}</h3>
+          <h3 className="app__talk--title">{talk.title}</h3>
         </Link>
-        <p>{talk.description}</p>
-        <p>{talk.speakers}</p>
-        <p>{talk.location}</p>
-        {/* {handleFav
-          ? <button type="button" onClick={() => this.handleClick(talk.id)}>Add as fav</button>
-          : ''} */}
+        <p className="app__talk--speakers">{talk.speakers}</p>
+        <p className="app__talk--location">{talk.location}</p>
       </div>
     );
   }

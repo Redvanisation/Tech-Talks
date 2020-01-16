@@ -24,13 +24,6 @@ class TalksList extends Component {
     });
   }
 
-  // handleUnFav(id) {
-  //   fetch(`api/v1/fav_talks/${id}`, {
-  //     method: 'put',
-  //     body: id,
-  //   });
-  // }
-
   render() {
     const { talks } = this.props;
     const allTalks = (talks)
@@ -43,7 +36,7 @@ class TalksList extends Component {
       ))
       : <p>Talks loading</p>;
     return (
-      <div>
+      <div className="app__talks-list container-fluid">
         {allTalks}
         <FavsButton />
       </div>

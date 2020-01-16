@@ -9,7 +9,6 @@ class SingleTalk extends Component {
     super(props);
     this.state = {
       talk: null,
-      showBtn: true,
     };
     this.handleAddFavorite = this.handleAddFavorite.bind(this);
     this.handleButton = this.handleButton.bind(this);
@@ -23,22 +22,17 @@ class SingleTalk extends Component {
       .then(talk => this.setState({
         talk,
       }));
-
-      this.handleButton();
   }
 
   handleButton() {
-
     // console.log(this.props)
     const { favoriteTalk } = this.props;
-    let talk;
-    // this.state.talk ? talk = this.state.talk : talk = {title: 'nothing'};
-    // if (Object.prototype.hasOwnProperty.call(favoriteTalk, talk.title)) {
-    // if (!favoriteTalk.hasOwnProperty(talk.title)) {
-      // console.log('included!');
-      console.log(favoriteTalk)
-      // console.log(talk)
-    // }
+    const { talk } = this.state;
+
+    if (talk && favoriteTalk.some(obj => obj.title === talk.title)) {
+      return false;
+    }
+    return true;
   }
 
   handleAddFavorite(id) {
@@ -61,7 +55,16 @@ class SingleTalk extends Component {
             <p>{talk.speakers}</p>
             <p>{talk.location}</p>
             <p>{talk.date}</p>
-            <button type="button" onClick={() => this.handleAddFavorite(talk.id)}>Add as fav</button>
+            {this.handleButton()
+              ? (
+                <button
+                  type="button"
+                  onClick={() => this.handleAddFavorite(talk.id)}
+                >
+                    Add as fav
+                </button>
+              )
+              : ''}
           </div>
         )
           : 'No talks yet'}
@@ -79,5 +82,7 @@ SingleTalk.propTypes = {
 const mapStateToProps = state => ({
   favoriteTalk: state.favTalks,
 });
+
+
 
 export default connect(mapStateToProps)(SingleTalk);

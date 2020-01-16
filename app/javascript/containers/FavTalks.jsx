@@ -8,21 +8,27 @@ import { favTalks } from '../actions/index';
 import Talk from '../components/Talk';
 
 class FavTalks extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
 
-  componentDidMount() {
-    this.getData();
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  getData() {
-    const { favTalks } = this.props;
-    setTimeout(() => {
-      fetch('api/v1/fav_talks')
-        .then(res => res.json())
-        .then(data => favTalks(data));
-    }, 10);
+  // componentDidMount() {
+  //   this.getData();
+  // }
+
+  // getData() {
+  //   const { favTalks } = this.props;
+  //   setTimeout(() => {
+  //     fetch('api/v1/fav_talks')
+  //       .then(res => res.json())
+  //       .then(data => favTalks(data));
+  //   }, 10);
+  // }
+
+  handleChange() {
+    this.props.getData();
   }
 
   render() {
@@ -32,7 +38,7 @@ class FavTalks extends Component {
       : 'No fav talks yet';
 
     return (
-      <div>
+      <div className='boo' onChange={this.handleChange()}>
         {favs}
       </div>
     );
