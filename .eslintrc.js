@@ -21,7 +21,6 @@ module.exports = {
   plugins: [
     'react',
   ],
-  // ignorePatterns: ["node_modules/", "app/javascript/packs"],
   rules: {
   },
 };

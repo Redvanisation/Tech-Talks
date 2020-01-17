@@ -1,6 +1,7 @@
 {
   "name": "Tech_Talks",
   "private": true,
+  "eslintIgnore": ["app/javascript/packs/application.js", "app/javascript/packs/server_rendering.js", "app/javascript/channels/*.js"],
   "dependencies": {
     "@babel/preset-react": "^7.7.4",
     "@rails/actioncable": "^6.0.0",

@@ -14,3 +14,4 @@ files:
     - "Rakefile"
     - "README.md"
     - "node_modules/**/*"
+    - "app/javascript/packs/*"
