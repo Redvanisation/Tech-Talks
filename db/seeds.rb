@@ -77,7 +77,3 @@ talks2 = [
 talks1.each do |talk_hash|
   user1.talks.create(talk_hash)
 end
-
-talks2.each do |talk_hash|
-  user2.talks.create(talk_hash)
-end
