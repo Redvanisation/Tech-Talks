@@ -17,8 +17,15 @@ body {
 .header {
   background-color: $color-primary;
   padding: .5rem;
-  // margin-top: -10px;
   color: $color-white;
+}
+
+.website-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 3rem;
+  display: inline;
 }
 
 .nav {
@@ -318,6 +325,7 @@ body {
     &--link:link,
     &--link:visited {
       text-decoration: none;
+      color: $color-primary;
     }
   }
 }
@@ -328,8 +336,6 @@ body {
   padding: .5rem;
   text-align: center;
   font-weight: 700;
-  width: 30%;
-  margin: 0 auto;
 }
 
 .hidden {
@@ -343,4 +349,76 @@ body {
 
 h6 {
   font-size: .8rem !important;
+}
+
+
+@media only screen and (max-width: 800px) {
+  .form {
+
+    &__h1 {
+      font-size: 2.5rem;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__field {
+
+      &--input {
+        width: 100%;
+      }
+    }
+  }
+
+
+  .app {
+    
+    &__talk {
+
+
+      &--date-time {
+        font-size: .8rem;
+      }
+
+      &--button {
+        position: absolute;
+        top: 51%;
+        right: 1%;
+        font-size: 2rem;
+
+        &:hover {
+          transform: translate(-50%, -51%) scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .website-title {
+    font-size: 2rem;
+  }
+
+}
+
+@media only screen and (max-width: 400px) {
+  .website-title {
+    font-size: 1.5rem;
+  }
+
+  .app {
+
+    &__talk {
+
+      &--speakers {
+        font-size: .8rem;
+      }
+
+      &--location {
+        font-size: .8rem;
+      }
+    }
+  }
 }

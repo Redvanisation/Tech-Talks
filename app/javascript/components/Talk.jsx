@@ -9,10 +9,6 @@ import {
 
 class Talk extends React.Component {
   handleClick(id) {
-    // fetch(`api/v1/fav_talks/${id}`, {
-    //   method: 'put',
-    //   body: id,
-    // });
     const { handleFav } = this.props;
     handleFav(id);
   }
@@ -20,7 +16,7 @@ class Talk extends React.Component {
   render() {
     const { talk } = this.props;
     return (
-      <div className="app__talk pt-4 pb-3 pl-5 pr-5 m-5">
+      <div className="app__talk pt-4 pb-3 pl-3 pl-sm-4 pl-md-5 pr-2 pr-sm-4 pr-md-5 m-2 m-sm-3 m-md-5">
         <div className="app__talk--date-time">
           <FaDotCircle className="app__talk--date-time-icon" /> {talk.date} | {talk.start_time} - {talk.end_time}
         </div>

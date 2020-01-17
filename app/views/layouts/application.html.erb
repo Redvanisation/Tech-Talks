@@ -8,11 +8,13 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
   <body>
     <% if user_signed_in? %>
-    <header class="header pt-2 pb-5 pl-5 pr-5">      
+    <header class="header pt-3 pl-3 pl-sm-4 pl-md-5 pr-3 pr-sm-4 pr-md-5">
+      <h1 class="website-title">Tech Talks</h1> 
       <nav class="nav">
             <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav__link") %> 
       </nav>
