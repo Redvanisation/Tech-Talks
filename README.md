@@ -26,7 +26,7 @@
     The final capstone project of the <b>Microverse</b> coding school Software Development curriculum, developed with <b>Ruby on Rails</b>, <b>ReactJS</b>, <b>React Router</b>, <b>Redux</b>, <b>Bootstrap</b> and <b>Sass</b>.
     <br />
     <br />
-    <a href="https://github.com/Redvanisation/Tech-Talks">Live Link</a>
+    <a href="https://tech--talks.herokuapp.com/" target="_blank">Live Link</a>
     ·
     <a href="https://github.com/Redvanisation/Tech-Talks/issues">Report Bug</a>
     ·
