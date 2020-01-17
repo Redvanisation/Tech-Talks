@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Api::V1::TalksController, type: :controller do
+RSpec.describe Api::V1::FavTalksController, type: :controller do
   describe "GET #index" do
     before do
       sign_in FactoryBot.create(:user)
