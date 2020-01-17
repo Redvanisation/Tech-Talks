@@ -54,7 +54,7 @@ body {
     background-color: $color-white;
     border-radius: 5px;
     box-shadow: 0px 2px 6px .5px rgba($color-black, 0.1);
-    margin-top: 4rem !important;
+    margin-top: 5rem !important;
 
     &--date-time {
       position: absolute;
@@ -411,7 +411,8 @@ h6 {
   .app {
 
     &__talk {
-
+      margin-top: 5.5rem !important;
+      
       &--speakers {
         font-size: .8rem;
       }
