@@ -180,12 +180,12 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
+[contributors-shield]: https://img.shields.io/github/contributors/Redvanisation/Tech-Talks
 [contributors-url]: https://github.com/Redvanisation/Tech-Talks/graphs/contributors
-[forks-shield]: https://github.com/Redvanisation/Tech-Talks.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/Redvanisation/Tech-Talks
 [forks-url]: https://github.com/Redvanisation/Tech-Talks/network/members
-[issues-shield]: https://github.com/Redvanisation/Tech-Talks.svg?style=flat-square
+[issues-shield]: https://img.shields.io/github/issues/Redvanisation/Tech-Talks
 [issues-url]: https://github.com/Redvanisation/Tech-Talks/issues
-[license-shield]: https://github.com/Redvanisation/Tech-Talks.svg?style=flat-square
+[license-shield]: https://img.shields.io/github/license/redvanisation/Tech-Talks
 [license-url]: https://github.com/Redvanisation/Tech-Talks/blob/master/LICENSE.txt
 [product-screenshot]: app/assets/images/screenshot2.png
