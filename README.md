@@ -163,7 +163,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 **Radouane Khiri** - [@redvanisation](https://twitter.com/redvanisation) - [LinkedIn](https://www.linkedin.com/in/redvan/) - redvanisation@gmail.com
 
-Tech Talks: [https://github.com/redvanisation/Tech-Talks](https://github.com/redvanisation/Tech-Talks)
+**Tech Talks** [https://github.com/redvanisation/Tech-Talks](https://github.com/redvanisation/Tech-Talks)
 
 
 
