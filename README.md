@@ -23,14 +23,12 @@
   <h3 align="center">TECH TALKS</h3>
 
   <p align="center">
-    The final capstone project of the Microverse coding school Software Development curriculum, developed with **Ruby on Rails**, **ReactJS**, **React Router**, **Redux**, **Bootstrap** and **Sass**.
-    <br />
-    <a href="https://tech--talks.herokuapp.com/" target="_blank"><strong>Live Link »</strong></a>
+    The final capstone project of the <b>Microverse</b> coding school Software Development curriculum, developed with <b>Ruby on Rails</b>, <b>ReactJS</b>, <b>React Router</b>, <b>Redux</b>, <b>Bootstrap</b> and <b>Sass</b>.
     <br />
     <br />
-    <a href="https://github.com/Redvanisation/Tech-Talks">View Demo</a>
+    <a href="https://github.com/Redvanisation/Tech-Talks">Live Link</a>
     ·
-    <a href="https://github.com/Redvanisation/Tech-Talks/issues">Tech-Talksrt Bug</a>
+    <a href="https://github.com/Redvanisation/Tech-Talks/issues">Report Bug</a>
     ·
     <a href="https://github.com/Redvanisation/Tech-Talks/issues">Request Feature</a>
   </p>
@@ -57,7 +55,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://tech--talks.herokuapp.com/)
 
 This project was developed as the final capstone project in the Microverse coding school Software Development bootcamp, it consisted of making a responsive mobile-first app with a **Ruby on Rails** RESTful API in the back-end and **ReactJS** for the front-end, implementing **Redux** and **React Router** implemnting the responsive design techniques and the Test-driven development method.<br />
 The app design is inspired from **[here](https://www.behance.net/gallery/71179603/HCIE-App-UIUX-Design)**, on this app as a registered user, you can see available tech talks in a timeline and you can check them for more details then you will be able to add them to your favorites timeline, the app also makes use of the **devise** Rails gem for a full user's authentication system and is deployed on **Heroku**, tested with **RSpec** and used **PostgreSQL** as the main database.
@@ -190,4 +188,4 @@ Tech Talks: [https://github.com/redvanisation/Tech-Talks](https://github.com/red
 [issues-url]: https://github.com/othneildrew/Best-README-Template/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: app/assets/images/screenshot2.png
