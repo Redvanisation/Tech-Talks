@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
@@ -34,9 +32,9 @@ RSpec.describe User, type: :model do
 
   context "Testing the user's favorites" do
     it 'Checks if the user can add talks as favorites' do
-      expect{
+      expect do
         user.talks << talk
-      }.to change(user.talks, :count).by(1)
+      end.to change(user.talks, :count).by(1)
     end
   end
 end

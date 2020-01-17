@@ -1,4 +1,4 @@
-module Api 
+module Api
   module V1
     class TheUsersController < ApplicationController
       def index

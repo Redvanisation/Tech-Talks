@@ -1,4 +1,4 @@
-module Api 
+module Api
   module V1
     class FavTalksController < ApplicationController
       skip_before_action :verify_authenticity_token
@@ -17,7 +17,6 @@ module Api
         @fav_talk = Talk.find(params[:id])
         current_user.talks << @fav_talk unless current_user.talks.include?(@fav_talk)
       end
-
     end
   end
 end
