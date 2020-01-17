@@ -39,7 +39,7 @@ class TalksList extends Component {
     return (
       <div className="app__talks-list">
         <Users />
-        <header className="talks__header pb-4">
+        <header className="talks__header pb-4 mb-5">
           <h2 className="talks__header--title font-weight-bold ml-5">Talks List</h2>
         </header>
         {allTalks}
