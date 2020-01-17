@@ -16,7 +16,10 @@ ActiveRecord::Schema.define(version: 2020_01_12_023537) do
     t.string "title"
     t.text "description"
     t.string "speakers"
-    t.datetime "date"
+    t.string "speciality"
+    t.string "date"
+    t.string "start_time"
+    t.string "end_time"
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

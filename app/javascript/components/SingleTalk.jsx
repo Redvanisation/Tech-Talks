@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable arrow-parens */
 import React, { Component } from 'react';
@@ -65,8 +66,7 @@ class SingleTalk extends Component {
                     <div className="st__icon-cont mt-3"><FaRegClock className="st__icon-cont--icon" /></div>
                     <div className="st__date pt-3 pb-3 pr-4 pl-4">
                       <p className="font-weight-bold">Date and time</p>
-                      08:00AM - 12:00PM
-                      {talk.date}
+                      {talk.date} | {talk.start_time} - {talk.end_time}
                     </div>
                   </div>
                   <div className="d-flex p-4">
@@ -99,9 +99,12 @@ class SingleTalk extends Component {
 
             <div className="st__bottom st__speaker mt-5">
               <h3 className="font-weight-bold st__speaker--title mb-4 ml-5">Speaker</h3>
-              <div className="d-flex st__speaker--body-div p-5">
-                <FaUserTie className="st__speaker--body-icon mr-3" />
-                <p className="st__speaker--body-text">{talk.speakers}</p>
+              <div className="d-flex st__speaker--body-div p-5 mb-5">
+                <FaUserTie className="st__speaker--body-icon mr-3 mt-1" />
+                <div>
+                  <p className="st__speaker--body-text">{talk.speakers}</p>
+                  {talk.speciality}
+                </div>
               </div>
             </div>
           </div>

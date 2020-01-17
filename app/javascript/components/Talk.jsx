@@ -1,7 +1,10 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { FaArrowCircleRight, FaRegBuilding, FaUserTie } from 'react-icons/fa';
+import {
+  FaArrowCircleRight, FaRegBuilding, FaUserTie, FaDotCircle,
+} from 'react-icons/fa';
 
 
 class Talk extends React.Component {
@@ -18,6 +21,9 @@ class Talk extends React.Component {
     const { talk } = this.props;
     return (
       <div className="app__talk pt-4 pb-3 pl-5 pr-5 m-5">
+        <div className="app__talk--date-time">
+          <FaDotCircle className="app__talk--date-time-icon" /> {talk.date} | {talk.start_time} - {talk.end_time}
+        </div>
         <Link to={`/${talk.id}`}>
           <h3 className="app__talk--title">{talk.title}</h3>
         </Link>

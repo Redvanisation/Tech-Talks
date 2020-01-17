@@ -4,7 +4,10 @@ class CreateTalks < ActiveRecord::Migration[6.0]
       t.string :title
       t.text :description
       t.string :speakers
-      t.datetime :date
+      t.string :speciality
+      t.string :date
+      t.string :start_time
+      t.string :end_time
       t.string :location
 
       t.timestamps
