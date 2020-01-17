@@ -16,12 +16,12 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
+  <h2 align="center">TECH TALKS</h2><br />
+  <br />
   <a href="https://github.com/redvanisation/Tech-Talks">
     <img src="app/assets/images/screenshot.png" alt="Logo" width="860" height="460">
   </a>
-
-  <h3 align="center">TECH TALKS</h3>
-
+  <br />
   <p align="center">
     The final capstone project of the <b>Microverse</b> coding school Software Development curriculum, developed with <b>Ruby on Rails</b>, <b>ReactJS</b>, <b>React Router</b>, <b>Redux</b>, <b>Bootstrap</b> and <b>Sass</b>.
     <br />
