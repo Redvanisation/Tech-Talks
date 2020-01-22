@@ -1,16 +1,13 @@
-/* eslint-disable no-shadow */
-/* eslint-disable arrow-parens */
-/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import TalksList from '../containers/TalksList';
-import Users from '../containers/Users';
 import SingleTalk from './SingleTalk';
 import FavTalks from '../containers/FavTalks';
 import { favTalks } from '../actions/index';
-import hide from '../helpers/helpers';
+import { hide } from '../helpers/helpers';
 
 class App extends Component {
   constructor() {
@@ -24,10 +21,10 @@ class App extends Component {
   }
 
   getData() {
-    const { favTalks } = this.props;
+    const { favoriteTalks } = this.props;
     fetch('api/v1/fav_talks')
-      .then(res => res.json())
-      .then(data => favTalks(data));
+      .then((res) => res.json())
+      .then((data) => favoriteTalks(data));
   }
 
   render() {
@@ -47,16 +44,16 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   userTalks: state.favTalks,
 });
 
-const mapDispatchToProps = dispatch => ({
-  favTalks: talks => dispatch(favTalks(talks)),
+const mapDispatchToProps = (dispatch) => ({
+  favoriteTalks: (talks) => dispatch(favTalks(talks)),
 });
 
 App.propTypes = {
-  favTalks: PropTypes.instanceOf(Function).isRequired,
+  favoriteTalks: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

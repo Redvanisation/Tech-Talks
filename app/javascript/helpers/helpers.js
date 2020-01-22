@@ -8,4 +8,10 @@ const hide = () => (
   }, 2000)
 );
 
-export default hide;
+const fetchData = (url, method) => (
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => method(data))
+);
+
+export { hide, fetchData };

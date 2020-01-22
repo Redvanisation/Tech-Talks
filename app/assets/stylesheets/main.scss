@@ -121,6 +121,10 @@ body {
     background-color: $color-primary;
     width: 100%;
   }
+
+  &__body {
+    list-style-type: none;
+  }
 }
 
 .st {

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -16,9 +15,10 @@ class Talk extends React.Component {
   render() {
     const { talk } = this.props;
     return (
-      <div className="app__talk pt-4 pb-3 pl-3 pl-sm-4 pl-md-5 pr-2 pr-sm-4 pr-md-5 m-2 m-sm-3 m-md-5 mb-5 mb-sm-4 mb-md-3">
+      <li className="app__talk pt-4 pb-3 pl-3 pl-sm-4 pl-md-5 pr-2 pr-sm-4 pr-md-5 m-2 m-sm-3 m-md-5 mb-5 mb-sm-4 mb-md-3">
         <div className="app__talk--date-time">
-          <FaDotCircle className="app__talk--date-time-icon" /> {talk.date} | {talk.start_time} - {talk.end_time}
+          <FaDotCircle className="app__talk--date-time-icon" />
+          {`${talk.date} | ${talk.start_time} - ${talk.end_time}`}
         </div>
         <Link to={`/${talk.id}`}>
           <h3 className="app__talk--title">{talk.title}</h3>
@@ -36,14 +36,13 @@ class Talk extends React.Component {
             <FaArrowCircleRight className="app__talk--button" />
           </Link>
         </div>
-      </div>
+      </li>
     );
   }
 }
 
 Talk.defaultProps = {
   title: 'Talk title',
-  description: 'Talk Description',
   speakers: 'Talk Speaker',
   location: 'Talk Location',
 };
@@ -53,7 +52,6 @@ Talk.propTypes = {
   // eslint-disable-next-line react/require-default-props
   handleFav: PropTypes.instanceOf(Function),
   title: PropTypes.string,
-  description: PropTypes.string,
   speakers: PropTypes.string,
   location: PropTypes.string,
 };

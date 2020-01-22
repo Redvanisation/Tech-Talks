@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable class-methods-use-this */
-/* eslint-disable arrow-parens */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -20,11 +17,12 @@ class SingleTalk extends Component {
   }
 
   componentDidMount() {
-    // eslint-disable-next-line react/destructuring-assignment
-    const { id } = this.props.match.params;
+    const { match } = this.props;
+    const { params } = match;
+    const { id } = params;
     fetch(`api/v1/talks/${id}`)
-      .then(res => res.json())
-      .then(talk => this.setState({
+      .then((res) => res.json())
+      .then((talk) => this.setState({
         talk,
       }));
   }
@@ -33,7 +31,7 @@ class SingleTalk extends Component {
     const { favoriteTalk } = this.props;
     const { talk } = this.state;
 
-    if (talk && favoriteTalk.some(obj => obj.title === talk.title)) {
+    if (talk && favoriteTalk.some((obj) => obj.title === talk.title)) {
       return false;
     }
     return true;
@@ -66,7 +64,7 @@ class SingleTalk extends Component {
                     <div className="st__icon-cont mt-3"><FaRegClock className="st__icon-cont--icon" /></div>
                     <div className="st__date pt-3 pb-3 pr-4 pl-4">
                       <p className="font-weight-bold">Date and time</p>
-                      {talk.date} | {talk.start_time} - {talk.end_time}
+                      {`${talk.date} | ${talk.start_time} - ${talk.end_time}`}
                     </div>
                   </div>
                   <div className="d-flex p-4">
@@ -123,7 +121,7 @@ SingleTalk.propTypes = {
   favoriteTalk: PropTypes.instanceOf(Array).isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   favoriteTalk: state.favTalks,
 });
 

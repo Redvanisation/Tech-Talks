@@ -2,15 +2,12 @@ Rails.application.routes.draw do
   root 'welcome#index'
   
   devise_for :users
-  
-  get 'welcome/home'
-  get 'index', to: 'welcome#index', as: 'index'
 
   namespace :api do 
     namespace :v1 do 
-      resources :talks
-      resources :the_users
-      resources :fav_talks
+      resources :talks, only: [:index, :show]
+      resources :the_users, only: [:index]
+      resources :fav_talks, only: [:index, :update]
     end 
   end
   

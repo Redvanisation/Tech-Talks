@@ -1,5 +1,4 @@
-/* eslint-disable no-shadow */
-/* eslint-disable arrow-parens */
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -7,10 +6,10 @@ import { getUser } from '../actions/index';
 
 class Users extends Component {
   componentDidMount() {
-    const { getUser } = this.props;
+    const { getTheUser } = this.props;
     fetch('api/v1/the_users')
-      .then(res => res.json())
-      .then(data => getUser(data));
+      .then((res) => res.json())
+      .then((data) => getTheUser(data));
   }
 
   render() {
@@ -29,16 +28,16 @@ class Users extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   currentUser: state.currentUser,
 });
 
-const mapDispatchToProps = dispatch => ({
-  getUser: user => dispatch(getUser(user)),
+const mapDispatchToProps = (dispatch) => ({
+  getTheUser: (user) => dispatch(getUser(user)),
 });
 
 Users.propTypes = {
-  getUser: PropTypes.instanceOf(Function).isRequired,
+  getTheUser: PropTypes.instanceOf(Function).isRequired,
   currentUser: PropTypes.instanceOf(Object).isRequired,
 };
 

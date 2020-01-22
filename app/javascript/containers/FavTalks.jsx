@@ -1,6 +1,3 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable no-shadow */
-/* eslint-disable arrow-parens */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -22,9 +19,14 @@ class FavTalks extends Component {
 
   render() {
     const { userTalks } = this.props;
-    const favs = userTalks
-      ? userTalks.map((talk, i) => <Talk key={i} talk={talk} />)
-      : 'No fav talks yet';
+    const favs = (
+      <ul className="talks__body">
+        {userTalks
+          ? userTalks.map((talk) => <Talk key={talk.id} talk={talk} />)
+          : 'No fav talks yet'}
+      </ul>
+    );
+
 
     return (
       <div onChange={this.handleChange()}>
@@ -38,12 +40,12 @@ class FavTalks extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   userTalks: state.favTalks,
 });
 
-const mapDispatchToProps = dispatch => ({
-  favTalks: talks => dispatch(favTalks(talks)),
+const mapDispatchToProps = (dispatch) => ({
+  favTalks: (talks) => dispatch(favTalks(talks)),
 });
 
 FavTalks.propTypes = {
