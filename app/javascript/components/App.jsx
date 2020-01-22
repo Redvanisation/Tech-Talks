@@ -7,7 +7,7 @@ import TalksList from '../containers/TalksList';
 import SingleTalk from './SingleTalk';
 import FavTalks from '../containers/FavTalks';
 import { favTalks } from '../actions/index';
-import { hide } from '../helpers/helpers';
+import { hide, fetchData } from '../helpers/helpers';
 
 class App extends Component {
   constructor() {
@@ -22,9 +22,8 @@ class App extends Component {
 
   getData() {
     const { favoriteTalks } = this.props;
-    fetch('api/v1/fav_talks')
-      .then((res) => res.json())
-      .then((data) => favoriteTalks(data));
+
+    fetchData('api/v1/fav_talks', favoriteTalks);
   }
 
   render() {

@@ -6,21 +6,18 @@ import { getTalks, favTalks } from '../actions/index';
 import Talk from '../components/Talk';
 import Users from './Users';
 import FavsButton from '../components/buttons/FavsButton';
+import { fetchData, updateData } from '../helpers/helpers';
 
 class TalksList extends Component {
   componentDidMount() {
     const { getTheTalks } = this.props;
-    fetch('api/v1/talks')
-      .then((res) => res.json())
-      .then((data) => getTheTalks(data));
+
+    fetchData('api/v1/talks', getTheTalks);
   }
 
   // eslint-disable-next-line class-methods-use-this
   handleFav(id) {
-    fetch(`api/v1/fav_talks/${id}`, {
-      method: 'put',
-      body: id,
-    });
+    updateData('api/v1/fav_talks/', id);
   }
 
   render() {

@@ -5,6 +5,7 @@ import {
   FaRegClock, FaRegBuilding, FaPlus, FaUserTie,
 } from 'react-icons/fa';
 import BackButton from './buttons/BackButton';
+import { updateData, fetchAndUpdateState } from '../helpers/helpers';
 
 class SingleTalk extends Component {
   constructor(props) {
@@ -20,8 +21,8 @@ class SingleTalk extends Component {
     const { match } = this.props;
     const { params } = match;
     const { id } = params;
-    fetch(`api/v1/talks/${id}`)
-      .then((res) => res.json())
+
+    fetchAndUpdateState('api/v1/talks/', id)
       .then((talk) => this.setState({
         talk,
       }));
@@ -38,10 +39,8 @@ class SingleTalk extends Component {
   }
 
   handleAddFavorite(id) {
-    fetch(`api/v1/fav_talks/${id}`, {
-      method: 'put',
-      body: id,
-    });
+    updateData('api/v1/fav_talks/', id);
+
     const { history } = this.props;
     history.push('/fav_talks');
   }

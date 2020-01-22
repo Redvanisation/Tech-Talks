@@ -14,4 +14,18 @@ const fetchData = (url, method) => (
     .then((data) => method(data))
 );
 
-export { hide, fetchData };
+const updateData = (url, id) => (
+  fetch(url + id, {
+    method: 'put',
+    body: id,
+  })
+);
+
+const fetchAndUpdateState = (url, id) => (
+  fetch(url + id)
+    .then((res) => res.json())
+);
+
+export {
+  hide, fetchData, updateData, fetchAndUpdateState,
+};

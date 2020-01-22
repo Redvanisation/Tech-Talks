@@ -1,15 +1,14 @@
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getUser } from '../actions/index';
+import { fetchData } from '../helpers/helpers';
 
 class Users extends Component {
   componentDidMount() {
     const { getTheUser } = this.props;
-    fetch('api/v1/the_users')
-      .then((res) => res.json())
-      .then((data) => getTheUser(data));
+
+    fetchData('api/v1/the_users', getTheUser);
   }
 
   render() {
