@@ -36,6 +36,8 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -61,5 +63,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Add Rack::LiveReload to the bottom of the middleware stack with the default options:
-  config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
+  # config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
 end
