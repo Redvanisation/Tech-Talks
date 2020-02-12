@@ -14,9 +14,9 @@ const fetchData = (url, method) => (
     .then((data) => method(data))
 );
 
-const updateData = (url, id) => (
+const updateData = (url, method, id) => (
   fetch(url + id, {
-    method: 'put',
+    method,
     body: id,
   })
 );

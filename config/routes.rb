@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'welcome#welcome'
   
   devise_for :users
 
@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do 
       resources :talks, only: [:index, :show]
       resources :the_users, only: [:index]
-      resources :fav_talks, only: [:index, :update]
+      resources :fav_talks, only: [:index, :update, :destroy]
     end 
   end
   

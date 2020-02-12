@@ -39,8 +39,14 @@ class SingleTalk extends Component {
   }
 
   handleAddFavorite(id) {
-    updateData('api/v1/fav_talks/', id);
+    updateData('api/v1/fav_talks/', 'put', id);
 
+    const { history } = this.props;
+    history.push('/fav_talks');
+  }
+
+  handleRemoveFavorite(id) {
+    updateData('api/v1/fav_talks/', 'delete', id);
     const { history } = this.props;
     history.push('/fav_talks');
   }
@@ -85,7 +91,16 @@ class SingleTalk extends Component {
                       <FaPlus className="st__button--icon mt-1" />
                     </button>
                   )
-                  : ''}
+                  : (
+                    <button
+                      className="st__button st__button--rmv pt-3 pb-3 pl-4 pr-4 mt-3"
+                      type="button"
+                      onClick={() => this.handleRemoveFavorite(talk.id)}
+                    >
+                        Remove fav
+                      <FaPlus className="st__button--icon mt-1" />
+                    </button>
+                  )}
               </div>
             </header>
 

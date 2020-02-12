@@ -17,6 +17,11 @@ module Api
         @fav_talk = Talk.find(params[:id])
         current_user.talks << @fav_talk unless current_user.talks.include?(@fav_talk)
       end
+
+      def destroy
+        @fav_talk = Talk.find(params[:id])
+        current_user.talks.delete(@fav_talk.id)
+      end
     end
   end
 end
