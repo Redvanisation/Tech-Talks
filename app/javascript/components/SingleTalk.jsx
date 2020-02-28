@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  FaRegClock, FaRegBuilding, FaPlus, FaUserTie,
+  FaRegClock, FaRegBuilding, FaPlus, FaMinus, FaUserTie,
 } from 'react-icons/fa';
 import BackButton from './buttons/BackButton';
 import { updateData, fetchAndUpdateState } from '../helpers/helpers';
@@ -98,7 +98,7 @@ class SingleTalk extends Component {
                       onClick={() => this.handleRemoveFavorite(talk.id)}
                     >
                         Remove fav
-                      <FaPlus className="st__button--icon mt-1" />
+                      <FaMinus className="st__button--icon mt-1" />
                     </button>
                   )}
               </div>
