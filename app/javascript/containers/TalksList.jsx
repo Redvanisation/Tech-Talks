@@ -2,22 +2,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getTalks, favTalks } from '../actions/index';
+import { getTalks, getFavs } from '../actions/index';
 import Talk from '../components/Talk';
 import Users from './Users';
 import FavsButton from '../components/buttons/FavsButton';
-import { fetchData, updateData } from '../helpers/helpers';
+import { fetchData } from '../helpers/helpers';
 
 class TalksList extends Component {
   componentDidMount() {
     const { getTheTalks } = this.props;
 
     fetchData('api/v1/talks', getTheTalks);
-  }
-
-  // eslint-disable-next-line class-methods-use-this
-  handleFav(id) {
-    updateData('api/v1/fav_talks/', id);
   }
 
   render() {
@@ -51,12 +46,13 @@ class TalksList extends Component {
 
 const mapStateToProps = (state) => ({
   talks: state.talks,
+  favs: state.favs,
   current_user: state.current_user,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   getTheTalks: (talks) => dispatch(getTalks(talks)),
-  favTalks: (filter) => dispatch(favTalks(filter)),
+  favoriteTalks: (talks) => dispatch(getFavs(talks)),
 });
 
 TalksList.propTypes = {

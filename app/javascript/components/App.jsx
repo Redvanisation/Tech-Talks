@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -6,13 +7,14 @@ import PropTypes from 'prop-types';
 import TalksList from '../containers/TalksList';
 import SingleTalk from './SingleTalk';
 import FavTalks from '../containers/FavTalks';
-import { favTalks } from '../actions/index';
+import { getFavs } from '../actions/index';
 import { hide, fetchData } from '../helpers/helpers';
 
 class App extends Component {
   constructor() {
     super();
     this.getData = this.getData.bind(this);
+    this.refresh = this.refresh.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +28,10 @@ class App extends Component {
     fetchData('api/v1/fav_talks', favoriteTalks);
   }
 
+  refresh() {
+    window.location.reload();
+  }
+
   render() {
     return (
       <div className="app">
@@ -34,7 +40,7 @@ class App extends Component {
             <Route exact path="/" component={TalksList} />
             <Switch>
               <Route path="/fav_talks" render={(props) => <FavTalks {...props} getData={this.getData} />} />
-              <Route path="/:id" component={SingleTalk} />
+              <Route path="/:id" render={(props) => <SingleTalk {...props} refresh={this.refresh} />} />
             </Switch>
           </div>
         </Router>
@@ -44,11 +50,12 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  userTalks: state.favTalks,
+  userTalks: state.talks,
+  favs: state.favTalks,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  favoriteTalks: (talks) => dispatch(favTalks(talks)),
+  favoriteTalks: (talks) => dispatch(getFavs(talks)),
 });
 
 App.propTypes = {

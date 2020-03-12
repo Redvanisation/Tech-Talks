@@ -40,15 +40,16 @@ class SingleTalk extends Component {
 
   handleAddFavorite(id) {
     updateData('api/v1/fav_talks/', 'put', id);
-
-    const { history } = this.props;
-    history.push('/fav_talks');
+    const { history, refresh } = this.props;
+    history.push('/');
+    refresh();
   }
 
   handleRemoveFavorite(id) {
     updateData('api/v1/fav_talks/', 'delete', id);
-    const { history } = this.props;
-    history.push('/fav_talks');
+    const { history, refresh } = this.props;
+    history.push('/');
+    refresh();
   }
 
   render() {
@@ -133,6 +134,7 @@ SingleTalk.propTypes = {
   push: PropTypes.instanceOf(Function),
   match: PropTypes.instanceOf(Object).isRequired,
   favoriteTalk: PropTypes.instanceOf(Array).isRequired,
+  refresh: PropTypes.instanceOf(Function).isRequired,
 };
 
 const mapStateToProps = (state) => ({

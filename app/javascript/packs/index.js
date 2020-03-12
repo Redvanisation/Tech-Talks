@@ -9,8 +9,8 @@ import '../../assets/stylesheets/main.scss';
 
 const initialState = {
   talks: [{}],
-  currentUser: {},
   favTalks: [{}],
+  currentUser: {},
 };
 
 const store = createStore(rootReducer, initialState);

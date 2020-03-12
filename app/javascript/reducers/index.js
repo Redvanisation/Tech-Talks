@@ -5,8 +5,8 @@ import favTalksReducer from './favTalksReducer';
 
 const rootReducer = combineReducers({
   talks: talksReducer,
-  currentUser: userReducer,
   favTalks: favTalksReducer,
+  currentUser: userReducer,
 });
 
 export default rootReducer;

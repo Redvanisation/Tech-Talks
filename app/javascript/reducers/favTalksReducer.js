@@ -1,9 +1,6 @@
 const favTalksReducer = (state = null, action) => {
   switch (action.type) {
-    case 'FAV_TALK':
-      return action.payload;
-
-    case 'ADD_FAV':
+    case 'GET_FAVS':
       return action.payload;
 
     default:
