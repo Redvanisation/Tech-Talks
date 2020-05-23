@@ -16,6 +16,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
+
   <a href="https://github.com/redvanisation/Tech-Talks">
     <img src="app/assets/images/screenshot.png" alt="Logo" width="860" height="460">
   </a>
